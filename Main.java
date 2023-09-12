@@ -1,5 +1,5 @@
 import Humains.*; //Ceci permet d'importer toutes les classes du projet Humains
-
+import POOJavaEcole.*;
 
 //Classe principale du programme
 public class Main{
@@ -60,6 +60,34 @@ public class Main{
 
             client.sayEverything();
         }
+
+                             //EXERCICE 2 ECOLES ET ETUDIANTS //
+
+        //création de trois étudiants 
+        Etudiant paul = new Etudiant("Boucher", "Paul", 17, "DWWM", false);
+        Etudiant julien = new Etudiant("Faucher", "Julien", 18, "Graphisme", false );
+        Etudiant fanny = new Etudiant("Javelot", "Fanny", 18, "Formation UX", false);
+
+
+        //Création d'une école 
+
+        String[] matieresEnseignees = {"DWWM", "Graphisme", "Formation UX"};
+        Etudiant[] etudiants = {paul, julien, fanny};
+        Ecole arinfo = new Ecole("Arinfo", matieresEnseignees, "Niort", etudiants );
+
+        // afficher les infos de l'écol 
+        arinfo.showInformations();
+
+        // je récupère le tableau des étudiants avec le getter
+        for(Etudiant etudiant : arinfo.getEtudiants()){
+            etudiant.sayHello();
+            etudiant.setDiplomeObtenu(true);
+            etudiant.isGraduated();
+        }
+
+        
+
+
 
 
     }
